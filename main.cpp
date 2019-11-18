@@ -1,6 +1,12 @@
-#include <iostream>
+
+#include "funciones.h"
+#include "rectangulo.h"
+#include "tablero.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    read("rectangulos.in");
+
+
     return 0;
 }
