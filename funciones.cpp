@@ -7,25 +7,25 @@
 #include <algorithm>
 
 
-bool inside(rectangulo *a, rectangulo *b){
-    return (b->get_esquina_first() < a->get_esquina_first() &&
-            b->get_esquina_first() + b->get_width() > a->get_esquina_first() + a->get_width())
-           && (b->get_esquina_second() > a->get_esquina_second() &&
-               b->get_esquina_second() - b->get_high() < a->get_esquina_second() - a->get_high());
+bool inside(rectangulo *x, rectangulo *y){
+    return (y->get_esquina_first() < x->get_esquina_first() &&
+            y->get_esquina_first() + y->get_width() > x->get_esquina_first() + x->get_width())
+           && (y->get_esquina_second() > x->get_esquina_second() &&
+               y->get_esquina_second() - y->get_high() < x->get_esquina_second() - x->get_high());
 }
 
 
 
 
-bool valid(rectangulo* a, vector<rectangulo*> rectangulos){
-    for(auto&b:rectangulos){
+bool valid(rectangulo* x, vector<rectangulo*> rectangles){
+    for(auto&y:rectangles){
 
-        pair<int, int> l1 = make_pair(a->get_esquina_first(), a->get_esquina_second());
-        pair<int, int> l2 = make_pair(b->get_esquina_first(), b->get_esquina_second());
-        pair<int, int> r1 = make_pair(a->get_esquina_first()+a->get_high(), a->get_esquina_second()-a->get_high());
-        pair<int, int> r2 = make_pair(b->get_esquina_first()+b->get_high(), b->get_esquina_second()-b->get_high());
+        pair<int, int> l1 = make_pair(x->get_esquina_first(), x->get_esquina_second());
+        pair<int, int> l2 = make_pair(y->get_esquina_first(), y->get_esquina_second());
+        pair<int, int> r1 = make_pair(x->get_esquina_first()+x->get_high(), x->get_esquina_second()-x->get_high());
+        pair<int, int> r2 = make_pair(y->get_esquina_first()+y->get_high(), y->get_esquina_second()-y->get_high());
 
-        if(inside(a,b) or inside(b,a)) {
+        if(inside(x,y) or inside(y,x)) {
             continue;
         }
 
@@ -59,17 +59,10 @@ void read(string filename, tablero *t) {
         r->set_esquina(first, second);
 
         if(valid(r, t->get_rectangles()))
-            t->get_rectangles().emplace_back(r);
+            t->add_rec(r);
     }
     t->sorting();
 }
-
-
-
-
-
-
-
 
 bool comp(rectangulo& a, rectangulo& b){
     if(a.get_esquina_first() != b.get_esquina_first()){
