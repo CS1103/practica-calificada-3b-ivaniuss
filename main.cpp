@@ -7,8 +7,8 @@ int main() {
     tablero *t = nullptr;
     t = new tablero();
 
-    read("rectangulos.in",t);
-    write("rectangulo.out", t);
+    read("../rectangulos.in",t);
+    write("../rectangulo.out", t);
 
 
     cout<<t->get_size();

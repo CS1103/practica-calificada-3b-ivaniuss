@@ -60,24 +60,15 @@ void read(string filename, tablero *t) {
 
         if(valid(r, t->get_rectangles()))
             t->add_rec(r);
+
     }
     t->sorting();
 }
 
-bool comp(rectangulo& a, rectangulo& b){
-    if(a.get_esquina_first() != b.get_esquina_first()){
-        return a.get_esquina_first() < b.get_esquina_first();
-    }
-    else{
-        if(a.get_esquina_second() != b.get_esquina_second())
-            return a.get_esquina_second() < b.get_esquina_second();
-        else
-            return (a.get_high() * a.get_width()) < (b.get_high() * b.get_width());
-    }
-}
 
 
-void write(string file, tablero *t) {
+
+void write(const string& file, tablero *t) {
     fstream out(file, ios::out);
     for (auto & item: t->get_rectangles()){
         out<<item->get_action()<<' '<<item->get_esquina_first()<<' '<<item->get_esquina_second()<<' '<<item->get_high()<<' '<<item->get_width()<<'\n';

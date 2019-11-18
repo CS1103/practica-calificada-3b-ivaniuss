@@ -10,12 +10,15 @@
 #include <algorithm>
 #include "rectangulo.h"
 
+
 using namespace std;
 
 class tablero {
     int _nrectangulosm, _nrows, _ncolumns;
     vector<rectangulo*> _r;
+
 public:
+
     tablero();
     ~tablero();
     int getNrectangulosm() const;
@@ -28,7 +31,6 @@ public:
     vector<rectangulo*> get_rectangles();
     void sorting();
     int get_size();
-
 
 
 };

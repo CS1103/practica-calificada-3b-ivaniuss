@@ -43,6 +43,8 @@ void tablero::add_rec(rectangulo *rectangle) {
 
 void tablero::sorting() {
     sort(begin(_r), end(_r));
+
+
 }
 
 
@@ -53,5 +55,4 @@ vector<rectangulo*> tablero::get_rectangles() {
 int tablero::get_size() {
     return _r.size();
 }
-
 
