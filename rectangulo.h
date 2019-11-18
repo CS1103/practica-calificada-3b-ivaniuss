@@ -27,6 +27,7 @@ public:
     int get_width();
     int get_esquina_first();
     int get_esquina_second();
+    void sorting();
     friend ostream &operator << (ostream & os, rectangulo *r);
 
 };

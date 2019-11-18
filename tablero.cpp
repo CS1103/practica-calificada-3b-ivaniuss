@@ -40,7 +40,18 @@ void tablero::add_rec(rectangulo *rectangle) {
     _r.emplace_back(rectangle);
 }
 
+
+void tablero::sorting() {
+    sort(begin(_r), end(_r));
+}
+
+
+vector<rectangulo*> tablero::get_rectangles() {
+    return _r;
+}
+
 int tablero::get_size() {
     return _r.size();
 }
+
 

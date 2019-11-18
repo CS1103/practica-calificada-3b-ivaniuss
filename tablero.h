@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "rectangulo.h"
 
 using namespace std;
@@ -24,6 +25,8 @@ public:
     int getNcolumns() const;
     void setNcolumns(int ncolumns);
     void add_rec(rectangulo* rectangle);
+    vector<rectangulo*> get_rectangles();
+    void sorting();
     int get_size();
 
 

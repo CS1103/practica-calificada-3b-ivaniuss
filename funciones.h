@@ -7,9 +7,12 @@
 
 #include "funciones.h"
 #include "rectangulo.h"
+#include "tablero.h"
 
-
-void read(string filename);
+void read(string filename, tablero *t);
+void write(std::string filename, tablero *t);
+bool inside(rectangulo a, rectangulo b);
+bool valid(rectangulo a, vector<rectangulo*> rectangulos);
 
 
 #endif //PC3B_FUNCIONES_H

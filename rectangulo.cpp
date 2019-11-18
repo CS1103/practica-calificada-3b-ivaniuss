@@ -60,3 +60,6 @@ ostream &operator << (ostream & os, rectangulo *r){
     return os;
 }
 
+void rectangulo::sorting() {
+}
+
